@@ -1,4 +1,5 @@
 #knappar_div{
+    /* Style taggar för att formattera knapparna rätt samt sätta bakgrundsfärg, storlek etc. */
     overflow: hidden;
     background-color: beige;
     align-items: center;
@@ -12,6 +13,7 @@
 }
 
 .knapp{
+    /* Style taggar för själva knapparna. Jag använder % för att sidan ska bli naturligt responsiv. */
     background-color: cornflowerblue;
     border: none;
     color: white;
@@ -25,6 +27,7 @@
     box-sizing: content-box;
 }
 
+/* Ändrar färgen när musen kommer över knappen. */
 .knapp:hover{
     background-color: rgb(5, 96, 186);
 }
