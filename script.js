@@ -21,6 +21,11 @@ function displayTime(){
     document.getElementById('time').innerHTML = time_now
 }
 
+function displayTimeHeader(){
+    var time_now = new Date();
+    document.getElementById('time_2').innerHTML = time_now
+}
+
 function changePicture(){
     /* Ersätter bilden img tagen med id:t bild_calle med en annan bild. */
     document.getElementById('bild_calle').src = "lof.jpg"
@@ -34,4 +39,17 @@ function hidePicture(){
 function showPicture(){
     /* Samma princip som hidePicture med skillnaden att den visar det så som det var ursprungligen. Initial används istället för none för att uppnå detta. */
     document.getElementById('bild_calle').style.display = 'initial';
+}
+
+function headerFunction(){
+    document.getElementById('header').style.display = 'unset';
+    document.getElementById('normal').style.display = 'none';
+}
+
+function headerFunctionRemove(){
+    document.getElementById('header').style.display = 'none';
+}
+
+function headerFunctionShow(){
+    document.getElementById('header').style.display = 'unset';
 }

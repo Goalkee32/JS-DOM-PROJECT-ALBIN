@@ -10,6 +10,7 @@
     position: relative;
     justify-content: space-around;
     margin: auto;
+    visibility: visible;
 }
 
 .knapp{
@@ -25,9 +26,19 @@
     border-radius: 8px;
     word-wrap: break-word;
     box-sizing: content-box;
+    visibility: visible;
 }
 
 /* Ändrar färgen när musen kommer över knappen. */
 .knapp:hover{
     background-color: rgb(5, 96, 186);
+}
+
+#header{
+    background-color: aqua;
+    display: none;
+}
+
+#normal{
+    display: unset;
 }

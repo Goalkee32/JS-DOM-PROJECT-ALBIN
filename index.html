@@ -9,15 +9,26 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- Innuti H1 taggen finns en div med ett ID. Detta ID används i funktionen goodvibesText(). Diven ändras till en satt text när du klickar på Good vibes knappen. -->
-    <h1><div id="goodvibes"></div></h1>
-    <!-- En div med ett ID som ändras i funktionen displayTime(). Den visar den aktuella tiden då knappen Time har tryckts. -->
-    <div id="time"></div>
-    <br>
-    <div id="bild">
-        <!-- Vanlig bild med en satt height och width samt ett id som används i funktionen changePicture(). -->
-        <img src="carlbildt.jpg" height="20%" width="12%" id="bild_calle">
+    <div id="header">
+        <h1>You can do it!</h1>
+        <div id="time_2" script="new Date();"></div>
+        <br>
+        <div id="bild_2">
+            <img src="carlbildt.jpg" height="20%" width="12%" id="bild_calle_2">
+        </div>
     </div>
+    <div id="normal">
+        <!-- Innuti H1 taggen finns en div med ett ID. Detta ID används i funktionen goodvibesText(). Diven ändras till en satt text när du klickar på Good vibes knappen. -->
+        <h1><div id="goodvibes"></div></h1>
+        <!-- En div med ett ID som ändras i funktionen displayTime(). Den visar den aktuella tiden då knappen Time har tryckts. -->
+        <div id="time"></div>
+        <br>
+        <div id="bild">
+            <!-- Vanlig bild med en satt height och width samt ett id som används i funktionen changePicture(). -->
+            <img src="carlbildt.jpg" height="20%" width="12%" id="bild_calle">
+        </div>
+    </div>
+
     <!-- En div med alla knappar. Det finns divs i denna diven för att strukturen blir enklare på det viset. Denna div med id:t knappar_div är ansvarig för bakgrunden i knapprektangeln. -->
     <div id="knappar_div">
         <!-- Alla knappar här har samma klassnamn för att de ska se likadana ut. Detta ändras i style.css. Sedan kallar de på en specifik funktion som finns i script.js när de klickas. -->
@@ -32,9 +43,9 @@
             <button class="knapp" onclick="showPicture();">Show picture</button>
         </div>
         <div>
-            <button class="knapp">Header</button>
-            <button class="knapp">Remove header</button>
-            <button class="knapp">Show header</button>
+            <button class="knapp" onclick="headerFunction()">Header</button>
+            <button class="knapp" onclick="headerFunctionRemove()">Remove header</button>
+            <button class="knapp" onclick="headerFunctionShow()">Show header</button>
         </div>
     </div>
 </body>
