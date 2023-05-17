@@ -1,10 +1,13 @@
+/* Variabeln change definieras för koden nedan. */
 var change = document.getElementById("changebg")
 
 function changeColor(color){
+    /* Ändrar body stylen, vilket vanligtvis hade varit i css filen till en color. */
     document.body.style.background = color;
 }
 
 function changebg_Run(){
+    /* Färgen som det ändras till är grön. */
     changeColor('green');
 }
 
@@ -21,14 +24,20 @@ function displayTime(){
     document.getElementById('time').innerHTML = time_now
 }
 
-function displayTimeHeader(){
-    var time_now = new Date();
-    document.getElementById('time_2').innerHTML = time_now
-}
+var img_track = 'calle';
 
 function changePicture(){
-    /* Ersätter bilden img tagen med id:t bild_calle med en annan bild. */
-    document.getElementById('bild_calle').src = "lof.jpg"
+    /* Har en variabel img_track utanför funktionen. Denna används i en if sats som ändrar bilden fram och tillbaka på hemsidan. När bilden ändras, ändras även värdet på img_track så att den kan ändras tillbaka vid nästa klick */
+    if(img_track == 'calle'){
+        document.getElementById('bild_calle').src = "lof.jpg";
+        document.getElementById('bild_calle_2').src = "lof.jpg";
+        img_track = 'lof';
+    } else {
+        document.getElementById('bild_calle').src = "carlbildt.jpg";
+        document.getElementById('bild_calle_2').src = "carlbildt.jpg";
+        img_track = 'calle';
+    }
+    
 }
 
 function hidePicture(){
@@ -42,14 +51,19 @@ function showPicture(){
 }
 
 function headerFunction(){
+    /* För att få in tiden behövde även denna läggas in i den här funktionen. När knappen klickas visas 'header' diven och 'normal' diven blir osynlig. */
+    time_now = new Date();
+    document.getElementById('time_2').innerHTML = time_now
     document.getElementById('header').style.display = 'unset';
     document.getElementById('normal').style.display = 'none';
 }
 
 function headerFunctionRemove(){
+    /* Gömmer headern */
     document.getElementById('header').style.display = 'none';
 }
 
 function headerFunctionShow(){
+    /* Visar headern igen */
     document.getElementById('header').style.display = 'unset';
 }

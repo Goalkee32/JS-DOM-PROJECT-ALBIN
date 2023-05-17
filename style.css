@@ -35,10 +35,12 @@
 }
 
 #header{
+    /* Ändrar header bakgrunden och har headern gömd från början. */
     background-color: aqua;
     display: none;
 }
 
 #normal{
+    /* Gör så att den vanliga layouten är från början. Detta och det ovan ändras i javascript filen. */
     display: unset;
 }
