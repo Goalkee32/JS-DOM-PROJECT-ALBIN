@@ -43,11 +43,13 @@ function changePicture(){
 function hidePicture(){
     /* Sätter värdet på img tagen med id:t bild_calle till noll. Detta gör att bilden försvinner. */
     document.getElementById('bild_calle').style.display = 'none';
+    document.getElementById('bild_calle_2').style.display = 'none';
 }
 
 function showPicture(){
     /* Samma princip som hidePicture med skillnaden att den visar det så som det var ursprungligen. Initial används istället för none för att uppnå detta. */
     document.getElementById('bild_calle').style.display = 'initial';
+    document.getElementById('bild_calle_2').style.display = 'initial';
 }
 
 function headerFunction(){
