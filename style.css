@@ -36,7 +36,10 @@
 
 #header{
     /* Ändrar header bakgrunden och har headern gömd från början. */
-    background-color: aqua;
+    background: gray;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
     display: none;
 }
 

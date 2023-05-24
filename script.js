@@ -31,6 +31,8 @@ function changePicture(){
     if(img_track == 'calle'){
         document.getElementById('bild_calle').src = "lof.jpg";
         document.getElementById('bild_calle_2').src = "lof.jpg";
+        document.getElementById('bild_calle_2').style.height = "100%";
+        document.getElementById('bild_calle_2').style.width = "200%";
         img_track = 'lof';
     } else {
         document.getElementById('bild_calle').src = "carlbildt.jpg";
@@ -56,7 +58,7 @@ function headerFunction(){
     /* För att få in tiden behövde även denna läggas in i den här funktionen. När knappen klickas visas 'header' diven och 'normal' diven blir osynlig. */
     time_now = new Date();
     document.getElementById('time_2').innerHTML = time_now
-    document.getElementById('header').style.display = 'unset';
+    document.getElementById('header').style.display = 'flex';
     document.getElementById('normal').style.display = 'none';
 }
 
@@ -67,5 +69,5 @@ function headerFunctionRemove(){
 
 function headerFunctionShow(){
     /* Visar headern igen */
-    document.getElementById('header').style.display = 'unset';
+    document.getElementById('header').style.display = 'flex';
 }
