@@ -37,6 +37,8 @@ function changePicture(){
     } else {
         document.getElementById('bild_calle').src = "carlbildt.jpg";
         document.getElementById('bild_calle_2').src = "carlbildt.jpg";
+        document.getElementById('bild_calle_2').style.height = "100%";
+        document.getElementById('bild_calle_2').style.width = "12%";
         img_track = 'calle';
     }
     
@@ -60,6 +62,7 @@ function headerFunction(){
     document.getElementById('time_2').innerHTML = time_now
     document.getElementById('header').style.display = 'flex';
     document.getElementById('normal').style.display = 'none';
+    document.getElementById('bild_calle_2').style.border = '10px green solid';
 }
 
 function headerFunctionRemove(){
@@ -70,4 +73,5 @@ function headerFunctionRemove(){
 function headerFunctionShow(){
     /* Visar headern igen */
     document.getElementById('header').style.display = 'flex';
+    document.getElementById('sluttext').textContent = 'Tack för att du besökt min hemsida!'
 }

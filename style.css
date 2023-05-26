@@ -36,14 +36,20 @@
 
 #header{
     /* Ändrar header bakgrunden och har headern gömd från början. */
-    background: gray;
+    background-color: gray;
     align-items: center;
     text-align: center;
     flex-direction: column;
     display: none;
+    position: relative;
 }
 
 #normal{
     /* Gör så att den vanliga layouten är från början. Detta och det ovan ändras i javascript filen. */
     display: unset;
+}
+
+#sluttext{
+    color: yellow;
+    text-align: center;
 }
