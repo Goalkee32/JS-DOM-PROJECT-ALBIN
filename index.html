@@ -1,77 +1,59 @@
-/* Variabeln change definieras för koden nedan. */
-var change = document.getElementById("changebg")
-
-function changeColor(color){
-    /* Ändrar body stylen, vilket vanligtvis hade varit i css filen till en color. */
-    document.body.style.background = color;
-}
-
-function changebg_Run(){
-    /* Färgen som det ändras till är grön. */
-    changeColor('green');
-}
-
-/* Allt ovan ^ är för att ändra bakgrundsfärgen. Jag använder här document.getElementById("changebg") för att den ska ändra rätt div. Sedan ändrar den bakgrunden till grön. */
-
-function goodvibesText(){
-    /* Sätter texten 'You can do it!' vid diven med id:t goodvibes. */
-    document.getElementById("goodvibes").textContent = 'You can do it!';
-}
-
-function displayTime(){
-    /* Använder Date för att få tiden när knappen klickas. Detta värde sätts sedan in vid diven med id:t time. */
-    var time_now = new Date();
-    document.getElementById('time').innerHTML = time_now
-}
-
-var img_track = 'calle';
-
-function changePicture(){
-    /* Har en variabel img_track utanför funktionen. Denna används i en if sats som ändrar bilden fram och tillbaka på hemsidan. När bilden ändras, ändras även värdet på img_track så att den kan ändras tillbaka vid nästa klick */
-    if(img_track == 'calle'){
-        document.getElementById('bild_calle').src = "lof.jpg";
-        document.getElementById('bild_calle_2').src = "lof.jpg";
-        document.getElementById('bild_calle_2').style.height = "100%";
-        document.getElementById('bild_calle_2').style.width = "200%";
-        img_track = 'lof';
-    } else {
-        document.getElementById('bild_calle').src = "carlbildt.jpg";
-        document.getElementById('bild_calle_2').src = "carlbildt.jpg";
-        document.getElementById('bild_calle_2').style.height = "100%";
-        document.getElementById('bild_calle_2').style.width = "12%";
-        img_track = 'calle';
-    }
-    
-}
-
-function hidePicture(){
-    /* Sätter värdet på img tagen med id:t bild_calle till noll. Detta gör att bilden försvinner. */
-    document.getElementById('bild_calle').style.display = 'none';
-    document.getElementById('bild_calle_2').style.display = 'none';
-}
-
-function showPicture(){
-    /* Samma princip som hidePicture med skillnaden att den visar det så som det var ursprungligen. Initial används istället för none för att uppnå detta. */
-    document.getElementById('bild_calle').style.display = 'initial';
-    document.getElementById('bild_calle_2').style.display = 'initial';
-}
-
-function headerFunction(){
-    /* För att få in tiden behövde även denna läggas in i den här funktionen. När knappen klickas visas 'header' diven och 'normal' diven blir osynlig. */
-    time_now = new Date();
-    document.getElementById('time_2').innerHTML = time_now
-    document.getElementById('header').style.display = 'flex';
-    document.getElementById('normal').style.display = 'none';
-    document.getElementById('bild_calle_2').style.border = '10px green solid';
-}
-
-function headerFunctionRemove(){
-    /* Gömmer headern */
-    document.getElementById('header').style.display = 'none';
-}
-
-function headerFunctionShow(){
-    /* Visar headern igen */
-    document.getElementById('header').style.display = 'flex';
-    document.getElementById('sluttext').textContent = 'Tack för att du besökt min hemsida!'
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- Identisk med div id="normal" nedan. Men annan struktur i css filen för att headern ska se ut som den ska. -->
+    <div id="header">
+        <h1>You can do it!</h1>
+        <div id="time_2"></div>
+        <br>
+        <br>
+        <div id="bild_2">
+            <img src="carlbildt.jpg" height="100%" width="12%" id="bild_calle_2">
+        </div>
+    </div>
+    <div id="normal">
+        <!-- Innuti H1 taggen finns en div med ett ID. Detta ID används i funktionen goodvibesText(). Diven ändras till en satt text när du klickar på Good vibes knappen. -->
+        <h1><div id="goodvibes"></div></h1>
+        <!-- En div med ett ID som ändras i funktionen displayTime(). Den visar den aktuella tiden då knappen Time har tryckts. -->
+        <div id="time"></div>
+        <br>
+        <div id="bild">
+            <!-- Vanlig bild med en satt height och width samt ett id som används i funktionen changePicture(). -->
+            <img src="carlbildt.jpg" height="20%" width="12%" id="bild_calle">
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <!-- En div med alla knappar. Det finns divs i denna diven för att strukturen blir enklare på det viset. Denna div med id:t knappar_div är ansvarig för bakgrunden i knapprektangeln. -->
+    <div id="knappar_div">
+        <!-- Alla knappar här har samma klassnamn för att de ska se likadana ut. Detta ändras i style.css. Sedan kallar de på en specifik funktion som finns i script.js när de klickas. -->
+        <div>
+            <button class="knapp" id="changebg" onclick="changebg_Run();">Change Bg</button>
+            <button class="knapp" onclick="goodvibesText();">Good vibes</button>
+            <button class="knapp" onclick="displayTime();">Time</button>
+        </div>
+        <div>
+            <button class="knapp" onclick="changePicture();">Change Picture</button>
+            <button class="knapp" onclick="hidePicture();">Hide picture</button>
+            <button class="knapp" onclick="showPicture();">Show picture</button>
+        </div>
+        <div>
+            <button class="knapp" onclick="headerFunction()">Header</button>
+            <button class="knapp" onclick="headerFunctionRemove()">Remove header</button>
+            <button class="knapp" onclick="headerFunctionShow()">Show header</button>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div id="sluttext"></div>
+</body>
+</html>
